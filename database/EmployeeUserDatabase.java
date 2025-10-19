@@ -1,6 +1,9 @@
+package database; 
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
+import model.EmployeeUser;
 
 public class EmployeeUserDatabase extends AbstractDatabase<EmployeeUser> {
 

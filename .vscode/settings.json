@@ -1,0 +1,9 @@
+{
+  "java.project.sourcePaths": [
+    "main",
+    "model",
+    "database",
+    "roles"
+  ],
+  "java.project.outputPath": "bin"
+}

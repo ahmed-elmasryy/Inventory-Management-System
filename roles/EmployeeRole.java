@@ -1,4 +1,4 @@
-
+package roles;
 public class EmployeeRole {
 
     public EmployeeRole() {
