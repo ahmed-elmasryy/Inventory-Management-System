@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import model.EmployeeUser;
 
-public class EmployeeUserDatabase extends AbstractDatabase<EmployeeUser> {
+public class EmployeeUserDatabase extends AbstractDatabase <EmployeeUser> {
 
     public EmployeeUserDatabase(String fileName) {
         this.filename = fileName;
