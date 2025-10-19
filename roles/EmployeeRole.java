@@ -1,6 +1,10 @@
+package roles;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import model.Product;
+import database.ProductDatabase; 
 
 public class EmployeeRole {
     ProductDatabase productDatabase = new ProductDatabase("Products.txt");
