@@ -38,10 +38,11 @@ public class CustomerProduct {
         }
         return false;
     }
-public String getSearchKey()
-{
+    
+    public String getSearchKey(){
      return (customerSSN + "," + productID + "," + purchaseDate + ".");
-}
+    }
+    
     public void setPaid(boolean paid) {
         this.paid = paid;
     }
