@@ -16,11 +16,8 @@ public class ProductDatabase extends AbstractDatabase<Product> {
     public void readFromFile() {
         try (Scanner sc = new Scanner(new File(this.filename))) {
             while (sc.hasNextLine()) {
-                String line = sc.nextLine();
-                Product p = createRecordFrom(line);
-                if (p != null) {
-                    records.add(p);
-                }
+                String line = sc.nextLine().trim();
+                this.records.add(createRecordFrom(line));
             }
         } catch (Exception e) {
             System.out.println(e);
@@ -36,14 +33,7 @@ public class ProductDatabase extends AbstractDatabase<Product> {
             return null;
         }
 
-        String productID = parts[0];
-        String productName = parts[1];
-        String manufacturerName = parts[2];
-        String supplierName = parts[3];
-        int quantity = Integer.parseInt(parts[4]);
-        float price = Float.parseFloat(parts[5]);
-
-        return new Product(productID, productName, manufacturerName, supplierName, quantity, price);
+        return new Product(parts[0], parts[1], parts[2], parts[3], Integer.parseInt(parts[4]),Float.parseFloat(parts[5]));
     }
 
     public ArrayList<Product> returnAllRecords() {
@@ -75,7 +65,6 @@ public class ProductDatabase extends AbstractDatabase<Product> {
     }
 
     public void insertRecord(Product record){
-        readFromFile();
         if(this.contains(record.getSearchKey())) {
             System.out.println("Record with key " + record.getSearchKey() + " already exists.");
             return;

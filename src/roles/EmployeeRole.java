@@ -1,5 +1,6 @@
 package roles;
 
+import java.io.File;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -12,9 +13,10 @@ import database.ProductDatabase;
 public class EmployeeRole {
     ProductDatabase productDatabase = new ProductDatabase("Products.txt");
     CustomerProductDatabase customerProductDatabase = new CustomerProductDatabase("CustomerProducts.txt");
+    
     public EmployeeRole() {
-        productDatabase.readFromFile();
-        customerProductDatabase.readFromFile();
+        this.productDatabase.readFromFile();
+        this.customerProductDatabase.readFromFile();
     }
 
     public void addProduct(String productId,String productName,
