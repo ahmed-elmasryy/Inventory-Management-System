@@ -2,6 +2,7 @@ package database;
 
 import java.io.*;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 import model.CustomerProduct;
 
@@ -33,7 +34,8 @@ public class CustomerProductDatabase extends AbstractDatabase<CustomerProduct> {
         for (int i = 0; i < parts.length; i++) {
             parts[i] = parts[i].trim();
         }
-        LocalDate date = LocalDate.parse(parts[2]);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+    LocalDate date = LocalDate.parse(parts[2], formatter);
 
         CustomerProduct cp = new CustomerProduct(parts[0], parts[1], date);
         boolean paid = Boolean.parseBoolean(parts[3]);

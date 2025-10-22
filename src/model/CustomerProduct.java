@@ -1,6 +1,7 @@
 package model;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class CustomerProduct {
 
@@ -29,7 +30,8 @@ public class CustomerProduct {
     }
 
     public String lineRepresentation() {
-        return (customerSSN + "," + productID + "," + purchaseDate + "," + paid + ".");
+         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        return (customerSSN + "," + productID + "," + purchaseDate.format(formatter) + "," + paid );
     }
 
     public boolean isPaid() {
@@ -40,7 +42,7 @@ public class CustomerProduct {
     }
     
     public String getSearchKey(){
-     return (customerSSN + "," + productID + "," + purchaseDate + ".");
+     return (customerSSN + "," + productID + "," + purchaseDate );
     }
     
     public void setPaid(boolean paid) {
