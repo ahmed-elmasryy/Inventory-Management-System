@@ -86,7 +86,7 @@ public class EmployeeUserDatabase extends AbstractDatabase <EmployeeUser> {
             PrintWriter writer = new PrintWriter(new FileWriter(file, false));
 
             for (int i = 0; i < this.records.size() ;i++) {
-                writer.println(this.records.get(i).toString());
+                writer.println(this.records.get(i).lineRepresentation());
             }
             writer.close();
         } catch (IOException e) {

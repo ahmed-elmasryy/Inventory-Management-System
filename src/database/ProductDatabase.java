@@ -75,7 +75,13 @@ public class ProductDatabase extends AbstractDatabase<Product> {
     }
 
     public void insertRecord(Product record){
+        readFromFile();
+        if(this.contains(record.getSearchKey())) {
+            System.out.println("Record with key " + record.getSearchKey() + " already exists.");
+            return;
+        }
         records.add(record);
+        saveToFile();
     }
 
     public void deleteRecord(String key){
@@ -101,7 +107,7 @@ public class ProductDatabase extends AbstractDatabase<Product> {
             PrintWriter writer = new PrintWriter(new FileWriter(file, false));
 
             for (int i = 0; i < this.records.size() ;i++) {
-                writer.println(this.records.get(i).toString());
+                writer.println(this.records.get(i).lineRepresentation());
             }
             writer.close();
         } catch (IOException e) {

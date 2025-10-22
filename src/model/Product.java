@@ -31,7 +31,7 @@ public class Product {
     }
 
     public String lineRepresentation() {
-        return (productID + "," + productName + "," + manufacturerName + "," + supplierName + "," + quantity + price + ".");
+        return (productID + "," + productName + "," + manufacturerName + "," + supplierName + "," + quantity + "," + price + ".");
     }
 
     public String getSearchKey() {

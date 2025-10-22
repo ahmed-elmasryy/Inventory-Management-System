@@ -3,7 +3,10 @@ package roles;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+
+import model.CustomerProduct;
 import model.Product;
+import database.CustomerProductDatabase;
 import database.ProductDatabase; 
 
 public class EmployeeRole {
