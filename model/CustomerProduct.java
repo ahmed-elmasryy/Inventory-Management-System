@@ -29,7 +29,7 @@ public class CustomerProduct {
     }
 
     public String lineRepresentation() {
-        return (customerSSN + "," + productID + "," + purchaseDate + "," + paid + ".");
+        return (customerSSN + "," + productID + "," + purchaseDate + "," + paid );
     }
 
     public boolean isPaid() {
@@ -38,11 +38,10 @@ public class CustomerProduct {
         }
         return false;
     }
-    
-    public String getSearchKey(){
-     return (customerSSN + "," + productID + "," + purchaseDate + ".");
-    }
-    
+public String getSearchKey()
+{
+     return (customerSSN + "," + productID + "," + purchaseDate );
+}
     public void setPaid(boolean paid) {
         this.paid = paid;
     }
